@@ -1,0 +1,83 @@
+{
+  "schema": "cfl-local-decoder-freeze-v1",
+  "experiment": "CFL-QWEN-GSM8K-10SEED-v1",
+  "state": "FROZEN_DESIGN_NOT_LAUNCHED",
+  "normative_document": "FREEZE.md",
+  "source": {
+    "repository": "https://github.com/openai/grade-school-math",
+    "revision": "3101c7d5072418e28b9008a6636bde82a006892c",
+    "file": "grade_school_math/data/test.jsonl",
+    "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+    "n_items": 1319,
+    "indexing": "zero_based",
+    "excluded": [3,11,29,34,47,54,169,207,239,242,272,285,290,308,313,341,346,410,420,433,437,440,461,496,497,508,553,563,615,682,716,782,810,815,836,876,910,911,913,970,977,980,1061,1076,1098,1176,1177,1188,1215,1261,1266,1281,1286,1292,1301,1310],
+    "item_selection_key": "CFL-QWEN-GSM8K-10SEED-v1:item:<id>"
+  },
+  "blocks": [
+    [1193,880,630,1087,607],
+    [690,70,1120,316,730],
+    [719,893,1142,1181,708],
+    [61,813,431,945,835],
+    [149,800,1001,814,483],
+    [978,451,1254,512,507],
+    [650,204,400,460,1212],
+    [889,881,659,458,702],
+    [1057,276,996,228,1232],
+    [525,123,489,839,953],
+    [856,289,84,394,975],
+    [71,1031,1135,705,1189]
+  ],
+  "seeds": [11,22,33,44,55,66,77,88,99,110],
+  "modes": {
+    "nonthinking": {"enable_thinking": false, "blocks": [1,2,3,4,5,6,7,8,9,10,11,12]},
+    "thinking": {"enable_thinking": true, "blocks": [1]}
+  },
+  "generation": {
+    "prompt_prefix": "Solve the math problem below. Show a concise calculation, then end with exactly one line of the form #### NUMBER.\n\n",
+    "batch_size": 1, "temperature": 1.0, "max_new_tokens": 1024, "num_beams": 1,
+    "num_return_sequences": 1, "do_sample": true, "repetition_penalty": 1.0,
+    "use_cache": true, "speculation": false, "attention_backend": "runtime_default",
+    "baseline_warpers": {"top_k": 20, "top_p": 0.95},
+    "arm_order_key": "CFL-QWEN-GSM8K-10SEED-v1:arm:<id>:<mode>:<seed>:<arm_id>"
+  },
+  "model_admission_order": [
+    ["Qwen/Qwen3.6-35B-A3B","345d467b117d1fd5eda9b879a5988de9ae5f47a7","nf4"],
+    ["Qwen/Qwen3.5-35B-A3B-GPTQ-Int4","3af5ca2972faf6de1fd6f4efc4d8d319ca751e8b","gptq_int4"],
+    ["Qwen/Qwen3.5-35B-A3B","59d61f3ce65a6d9863b86d2e96597125219dc754","nf4"],
+    ["Qwen/Qwen3-32B","9216db5781bf21249d130ec9da846c4624c16137","nf4"],
+    ["Qwen/Qwen2.5-32B-Instruct","5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd","nf4"],
+    ["Qwen/Qwen3-30B-A3B","ad44e777bcd18fa416d9da3bd8f70d33ebb85d39","nf4"],
+    ["Qwen/Qwen3.8-27B","37561816e66b5b9153b1b64c10968c18c1e6f4a0","nf4"],
+    ["Qwen/Qwen3.6-27B","8f33b98937c6031bb49e713dee3e8e185aafd26f","nf4"],
+    ["Qwen/Qwen3.5-27B-GPTQ-Int4","8f0c09f227ae570e79617c6d9172b59df9c16081","gptq_int4"]
+  ],
+  "admission": {"initial_gpu_shape": "2x T4", "min_free_vram_per_device_bytes": 1073741824, "offload": false, "requires_both_modes": true, "train_canary_indices": [0,1,2,3,4]},
+  "arms": {
+    "baseline": ["baseline"],
+    "baseline_qas": "alias_after_identity_canary",
+    "paired_mandatory": [
+      ["talon_mass_right","talon_mass_right_qas"],
+      ["talon_soft_left_v064","talon_soft_left_v064_qas"],
+      ["talm_mass_left_soft","talm_mass_left_soft_qas"],
+      ["min_p_0p10","min_p_0p10_qas"],
+      ["min_k_tau_2","min_k_tau_2_qas"],
+      ["top_h_alpha_0p40","top_h_alpha_0p40_qas"],
+      ["tfs_z_0p95","tfs_z_0p95_qas"]
+    ],
+    "paired_conditional": [["dola_low","dola_low_qas"]]
+  },
+  "qas": {
+    "baseline_topk": 256, "energy_topk": 512, "baseline_mass_target": 0.95,
+    "energy_target_on_candidate_list": 0.90, "min_list_tokens": 64, "max_union_tokens": 1024,
+    "epsilon": 1e-8, "mixed_finite_mask_weights": [0.5,0.5], "protect_base_top1_in_union": true
+  },
+  "z_explorer": {"role": "tail_search_probe", "offsets": [0,8,32], "per_end_mass": 0.01, "per_end_max_tokens": 512, "record_per_sign": 8},
+  "checkpoints": {
+    "prompts_per_checkpoint": 5, "principal": 12, "inverse": 1, "persistent_in_kaggle": true,
+    "resume_key_scope": "freeze_plus_admission_and_cell_key", "partial_sublots_are_not_complete_checkpoints": true
+  },
+  "expected_generations": {"principal_core": 9000,"inverse_core": 750,"principal_dola": 1200,"inverse_dola": 100,"core_total": 9750,"all_if_dola_admitted": 11050},
+  "primary_adjudication": "prompt_by_seed_unique_final_marker_decimal_exact",
+  "numeric_sensitivity": "last_number_in_visible_answer_only",
+  "no_routing_or_post_tuning": true
+}
