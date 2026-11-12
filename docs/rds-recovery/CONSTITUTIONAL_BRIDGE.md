@@ -1,5 +1,7 @@
 # AAD–TCS → KCH ↔ RDSS · Puente constitucional / Constitutional bridge
 
+**Registro histórico / Historical record.** Las propuestas de integración de este documento quedaron fuera del alcance activo. No constituyen una hoja de ruta ni un requisito para el frente de operadores. Véase el [contrato vigente de TALM/TALON](OPERATOR_SCOPE.md). / The integration proposals in this document are outside the active scope. They are neither a roadmap nor a prerequisite for the operator workstream. See the [current TALM/TALON contract](OPERATOR_SCOPE.md).
+
 ## Castellano
 
 ### Genealogía y límites de identificación

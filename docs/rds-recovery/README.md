@@ -1,5 +1,7 @@
 # CFL → RDS/RDSS · Reconstrucción / Recovery
 
+**Alcance vigente / Current scope:** [Contrato TALM/TALON / TALM/TALON contract](OPERATOR_SCOPE.md). Este índice conserva la recuperación histórica. Las propuestas previas sobre el router no son un plan activo ni parte del frente de operadores. / This index preserves the historical recovery. Earlier router proposals are not an active plan or part of the operator workstream.
+
 **ES.** Corte documental 2026-11-12. La ventana del 24 al 27 de junio de 2026 es la prioridad de recuperación indicada por el autor. No asigna autoridad por fecha, ni convierte una reconstrucción posterior en el original. Se preservan resultados adversos, nulos y no estimables. Este dossier no despliega un router ni modifica la campaña GSM8K.
 
 **EN.** Documentary cut dated 2026-11-12. June 24–27, 2026 is the author's priority recovery window. It neither confers authority by date nor turns a later reconstruction into the original. Adverse, null, and non-estimable results are retained. This dossier deploys no router and does not change the GSM8K campaign.
