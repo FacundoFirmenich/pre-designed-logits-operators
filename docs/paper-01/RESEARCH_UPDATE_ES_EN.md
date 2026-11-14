@@ -1,5 +1,11 @@
 # Paper 01 — Actualización experimental / Experimental update
 
+## Expansión y alcance editorial / Expansion and editorial scope
+
+Kaggle aceptó Gemma 4 E4B-it y Granite 4.0 H Micro, ambas v1, con estado inicial `QUEUED`. Son 300 celdas previstas por configuración; conservan los cinco casos, cuatro semillas, cinco métodos, tres condiciones QAS y el diagnóstico ZX. Phi y Qwen: 600/600 celdas verificadas. Gemma E2B, Granite Micro sin H, Falcon Mamba, Ministral y Liquid: preparados, sin enviar en este corte. / Kaggle accepted Gemma 4 E4B-it and Granite 4.0 H Micro v1; both were initially queued. Phi and Qwen remain verified at 600/600; the remaining five notebooks were prepared but not submitted at this checkpoint.
+
+Paper 01 evalúa un subconjunto del repertorio y reporta aportes por jurisdicción; un total de reemplazo indiscriminado es un control secundario, no el criterio que define autoridad. En la Discusión se propone situar estos resultados dentro del **enrutador bayesiano jerárquico, dinámico y reinformador**, con desarrollo experimental previo. Una onda fija puede actuar como generadora, como sonda contrafactual en sombra o en ambos papeles, según la jurisdicción; Top-H es un comparador externo y un candidato de doble uso. La cobertura exclusiva observada no prueba que el router sepa elegir ex ante ni mide el valor informativo de la sonda. / Paper 01 evaluates a subset of the portfolio and prioritizes jurisdiction-level contributions. The broader research program concerns a **hierarchical, dynamic Bayesian router with feedback**: a fixed intervention can generate, serve as a shadow counterfactual probe, or do both in different jurisdictions. Observed portfolio coverage does not validate ex-ante routing or the value of the probe.
+
 ## Cierre Phi y Qwen / Phi and Qwen closeout
 
 600/600 generaciones verificadas en dos configuraciones NF4 del mismo panel diagnóstico GSM8K: cinco problemas ya vistos, cuatro semillas y 15 brazos por modelo; no son 600 problemas independientes. Phi-4-mini usa su chat instruct nativo; Qwen3.5-4B tiene el modo explícito de razonamiento desactivado. Se mantuvo el recíproco a 1 nat; véase el [sello SHA-256](NR_TALON_FREEZE_SHA256_ES_EN.md), que consolida recibos previos al envío y no se retrofecha.
