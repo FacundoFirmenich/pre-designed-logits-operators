@@ -1,5 +1,7 @@
 # Paper 01 — Actualización experimental / Experimental update
 
+**Segundo despacho / Second dispatch.** Qwen v1 también fue aceptado y se observó en ejecución. Los dos modelos suman 600 generaciones previstas, no verificadas aún; los siete restantes estaban preparados pero no enviados. / Qwen v1 was accepted and observed running, for 600 planned cells across the two models; seven further configurations were prepared, not submitted.
+
 **Primer despacho / First dispatch.** Kaggle aceptó Phi v1 y se observó en ejecución: 300 generaciones previstas, sin evidencia terminal aún; las otras ocho configuraciones estaban preparadas pero no enviadas en este corte. / Phi v1 was accepted and observed running; 300 planned generations are not results. The other eight configurations were prepared but not submitted at this checkpoint.
 
 Continúa el canon del commit `6c13da3069dba4d6fb8bb9d0ecac5d3c90e41a95`. La variante recíproca se incorpora como experimento independiente; no modifica el operador Mass Right congelado. / Continues the previous canon. The reciprocal variant is experimental and does not modify frozen Mass Right.
