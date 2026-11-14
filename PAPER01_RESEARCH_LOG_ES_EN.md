@@ -23,3 +23,23 @@
 **Castellano.** El primer reintento instaló `torchvision 0.26.0+cu128` pero paró antes de inferencia: la comprobación previa detectó `torchaudio 2.11.0+cu130`, incompatible con el PyTorch congelado de CUDA 12.8. Ambos fallos se conservaron por separado en Drive. En un tercer intento, en la misma T4, se alinearon `torchvision 0.26.0+cu128` y `torchaudio 2.11.0+cu128` sin modificar PyTorch, el ZIP, la revisión de Qwen ni el protocolo. CUDA, NMS y `AutoProcessor` pasaron la comprobación. Se cargaron los pesos y se observaron **3/54 generaciones** al cierre de este checkpoint. No es un resultado terminal ni una comparación entre brazos. Una vez disponibles las 54 filas, se verificará la cobertura problema × entrada × semilla × brazo y se reportarán rescates y pérdidas locales de acierto exacto.
 
 **English.** The first retry installed `torchvision 0.26.0+cu128` but stopped before inference: preflight exposed `torchaudio 2.11.0+cu130`, incompatible with the pinned CUDA 12.8 PyTorch. Both failed attempts were kept separately in Drive. In the third attempt, the same T4 used `torchvision 0.26.0+cu128` and `torchaudio 2.11.0+cu128`, with PyTorch, the input archive, Qwen revision, and protocol unchanged. CUDA, NMS, and `AutoProcessor` passed preflight. The weights loaded and **3/54 generations** had been observed at this checkpoint. This is neither a terminal result nor an arm comparison. Once all 54 rows are available, verify task × input × seed × arm coverage and report local exact-match rescues and losses.
+
+## 2026-11-14 — Resultado terminal / Terminal result
+
+**Castellano.** Piloto ejecutado en T4: **54/54** generaciones, 18 tríos completos; sello y SHA-256 de `ENV.json` y `ROWS.jsonl` verificados en lectura de vuelta. **0/18 aciertos exactos por brazo.** En TALON vs baseline y TALON vs Top-H: 0 victorias, 18 empates por fallo simultáneo, 0 derrotas, sin rescates. Solo baseline emitió una cuadrícula válida (también de forma correcta), pero sin acierto. TALON alcanzó una vez el tope de 1.024 tokens; los demás no. Los tiempos corresponden a generación sincronizada en esta T4, no a facturación ni a evidencia de aceleración. `92e50de0` concentra un contraste local de coste sin ganancia de acierto. El suelo de rendimiento impide inferir equivalencia o dominancia entre métodos. Próximo contraste propuesto: validar la representación de cuadrículas y medir por separado formato, forma y solución exacta en un nuevo piloto congelado. No usar el split de evaluación hasta que el instrumento produzca señal interpretable.
+
+**English.** T4 pilot: **54/54** generations, 18 complete triplets; terminal seal and SHA-256 for `ENV.json` and `ROWS.jsonl` verified by read-back. **0/18 exact matches per arm.** TALON vs baseline and TALON vs Top-H each had 0 wins, 18 joint-failure ties, and 0 losses; no rescues. Baseline alone produced one valid, correctly shaped grid, but it was not an exact match. TALON hit the 1,024-token cap once; the other arms did not. Times reflect synchronized generation on this T4, not billable time or speedup evidence. `92e50de0` shows a local cost contrast with no accuracy benefit. This performance floor cannot establish equivalence or dominance. Proposed next contrast: validate the grid representation and measure format, shape, and exact solution separately in a newly frozen pilot. Keep the evaluation split untouched until the harness yields interpretable signal.
+
+Orden de brazos / Arm order: **baseline / TALON Mass Right / Top-H (0.40)**. Segundos sumados y redondeados por celda / Generation seconds summed and rounded per cell.
+
+| Problema / Task | n por brazo / per arm | Aciertos exactos / Exact | Cuadrículas válidas / Valid grids | Segundos / Seconds |
+|---|---:|---|---|---|
+| `e21a174a` | 4 | 0 / 0 / 0 | 1 / 0 / 0 | 59 / 44 / 43 |
+| `92e50de0` | 2 | 0 / 0 / 0 | 0 / 0 / 0 | 88 / 194 / 166 |
+| `e5790162` | 2 | 0 / 0 / 0 | 0 / 0 / 0 | 50 / 37 / 51 |
+| `6d0aefbc` | 2 | 0 / 0 / 0 | 0 / 0 / 0 | 10 / 11 / 10 |
+| `3d31c5b3` | 2 | 0 / 0 / 0 | 0 / 0 / 0 | 9 / 9 / 5 |
+| `ed98d772` | 2 | 0 / 0 / 0 | 0 / 0 / 0 | 20 / 20 / 18 |
+| `3618c87e` | 2 | 0 / 0 / 0 | 0 / 0 / 0 | 2 / 2 / 2 |
+| `27a77e38` | 2 | 0 / 0 / 0 | 0 / 0 / 0 | 25 / 27 / 18 |
+| **Total** | **18** | **0 / 0 / 0** | **1 / 0 / 0** | **262 / 344 / 313** |
