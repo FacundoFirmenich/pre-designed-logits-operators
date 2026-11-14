@@ -14,6 +14,8 @@ El cuaderno se abrió desde Drive en Colab visible. Drive solicitó permiso de a
 
 Enmienda operacional: la primera carga en GPU llegó al checkpoint de Qwen, pero la clase no expuso `hf_device_map`. La reanudación verifica que todos los parámetros residan realmente en `cuda:0` y, si existe un mapa de despacho, verifica además que no indique CPU ni disco. El cuaderno conserva ambos intentos y enlaza el nuevo manifiesto con el anterior; sin cambios en el experimento.
 
+Segunda enmienda de runtime: la pasada separada de respuesta volvió a preprocesar la cadena larga y falló por memoria (6,46 GiB solicitados con 3,18 GiB libres) antes de producir la primera fila. El intento siguiente conserva una sola caché a través del límite razonamiento/respuesta. Se preservan las cuotas, la misma máquina, las semillas y los brazos; no se presume equivalencia bit a bit entre ambas implementaciones. El cuaderno registra el manifiesto nuevo `830649a4f280f7855bbc1c5ea0e55096ce4c28c26266f1c78f71235443549cec`; el intento anterior no tiene ninguna fila adjudicable.
+
 ## English
 
 Four policies share one Qwen3.5-4B revision, one T4, double-quantized NF4 weights and FP16 compute: the inherited top-k 20/top-p 0.95 baseline, TALON Mass Right followed by the same truncation, author Top-H at 0.40, and TALON Mass Right without downstream truncation. The historical TALON configuration is unchanged. QAS, Z Explorer, Min-p and Min-k are outside this admission.
@@ -25,3 +27,5 @@ The first tier consists of 16 paired cells with seeds 11 and 33, a reasoning lim
 The notebook was opened from Drive in visible Colab. Drive mounting timed out before model load; the same plan was resumed on the same T4 without a Drive mount, with evidence emitted to the notebook. No unrelated runtime was stopped. CPU executor checks are not Qwen scores.
 
 Operational amendment: the first attempt loaded Qwen but the class did not expose `hf_device_map`. The resumed run checks the actual residency of every parameter in `cuda:0` and additionally checks the dispatch map when present. The notebook retains both attempts and links their manifests without changing the experiment.
+
+Second runtime amendment: a separate answer-generation prefill exhausted GPU memory (6.46 GiB requested against 3.18 GiB free) before any row was committed. The next attempt uses one continuous KV cache across reasoning and answer generation under the same task, seed, arm and token budget. This does not assert bitwise equivalence between implementations. The notebook records the new linked manifest.
