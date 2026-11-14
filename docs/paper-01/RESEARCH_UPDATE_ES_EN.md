@@ -1,5 +1,7 @@
 # Paper 01 — Actualización experimental / Experimental update
 
+**Primer despacho / First dispatch.** Kaggle aceptó Phi v1 y se observó en ejecución: 300 generaciones previstas, sin evidencia terminal aún; las otras ocho configuraciones estaban preparadas pero no enviadas en este corte. / Phi v1 was accepted and observed running; 300 planned generations are not results. The other eight configurations were prepared but not submitted at this checkpoint.
+
 Continúa el canon del commit `6c13da3069dba4d6fb8bb9d0ecac5d3c90e41a95`. La variante recíproca se incorpora como experimento independiente; no modifica el operador Mass Right congelado. / Continues the previous canon. The reciprocal variant is experimental and does not modify frozen Mass Right.
 
 | Frente / Workstream | Evidencia / Evidence |
