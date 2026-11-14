@@ -1,5 +1,23 @@
 # Paper 01 — Actualización experimental / Experimental update
 
+## Cierre Phi y Qwen / Phi and Qwen closeout
+
+600/600 generaciones verificadas en dos configuraciones NF4 del mismo panel diagnóstico GSM8K: cinco problemas ya vistos, cuatro semillas y 15 brazos por modelo; no son 600 problemas independientes. Phi-4-mini usa su chat instruct nativo; Qwen3.5-4B tiene el modo explícito de razonamiento desactivado. Se mantuvo el recíproco a 1 nat; véase el [sello SHA-256](NR_TALON_FREEZE_SHA256_ES_EN.md), que consolida recibos previos al envío y no se retrofecha.
+
+| Modelo / Model | QAS | Marcador estricto / Strict marker | Numérico flexible / Flexible numeric |
+|---|---|---|---|
+| Phi | No / Off | 12/14/14/11/18 | 17/17/17/16/20 |
+| Phi | Referencia / Exact v2 | 12/14/14/11/17 | 17/17/17/16/20 |
+| Qwen | No / Off | 13/14/15/15/15 | 13/14/15/15/15 |
+| Qwen | Referencia / Exact v2 | 13/14/15/15/14 | 13/14/15/15/14 |
+
+Orden / Order: baseline / Mass Right / inversión simple (odds reversal) / recíproco / Top‑H. Cada valor es sobre 20. Las dos variantes de QAS coinciden token a token en los 100 pares por modelo; ZX registró 45 prefijos válidos por modelo, no 45 resultados generativos.
+
+- **Phi, 1265/66:** el recíproco es el único de cinco que acierta con marcador estricto, en los tres modos QAS, incluso a 6 s. Con evaluación flexible no es exclusivo. Frente a inversión simple, el saldo estricto por semilla es 1 rescate y 4 pérdidas; en 1242 la inversión gana dos semillas. Top-H lidera ambos totales en Phi.
+- **Qwen:** recíproco e inversión coinciden en los 20 veredictos finales en cada modo QAS. En 430 sin QAS ambos marcan 2/4 frente a 0/4 de Top-H; en 85, Top-H 4/4 frente a 2/4 de ambos. Empatar a 15/20 sin QAS no significa resolver los mismos problemas.
+
+**English.** The reciprocal and simple reversal are not behaviorally equivalent across models: Phi yields a strict-marker rescue unique to the reciprocal, not a flexible-numeric exclusive. The reverse control wins more often on this Phi panel. Qwen reproduces the identical final verdicts of the two variants and shows opposing local edges versus Top-H. Treat this as a diagnostic of local complementarity, not prevalence on new prompts or cost savings. The seven other configurations are frozen, not yet reported as run. ARC‑AGI‑2 remains paused.
+
 **Segundo despacho / Second dispatch.** Qwen v1 también fue aceptado y se observó en ejecución. Los dos modelos suman 600 generaciones previstas, no verificadas aún; los siete restantes estaban preparados pero no enviados. / Qwen v1 was accepted and observed running, for 600 planned cells across the two models; seven further configurations were prepared, not submitted.
 
 **Primer despacho / First dispatch.** Kaggle aceptó Phi v1 y se observó en ejecución: 300 generaciones previstas, sin evidencia terminal aún; las otras ocho configuraciones estaban preparadas pero no enviadas en este corte. / Phi v1 was accepted and observed running; 300 planned generations are not results. The other eight configurations were prepared but not submitted at this checkpoint.
