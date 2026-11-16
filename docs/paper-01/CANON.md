@@ -30,7 +30,7 @@ La intervención y la localización forman el contraste generativo; la cartograf
 - **Sólo evidencia nueva en el paper.** Artefactos y cifras viejos son antecedentes técnicos excluidos de tablas, figuras, resultados y afirmaciones empíricas del manuscrito. Los casos históricos sirven para definir preguntas, no para elegir retroactivamente qué resultados cuentan. No se incorpora una definición de parámetros actuales a partir de un cuaderno de otra campaña.
 - **Custodia y búsqueda.** Drive, Descargas y Objetos 3D en C:/D:, biblioteca de ChatGPT y GitHub; lectura de lo ya presente en disco, sin nuevas descargas ni extracción local. Comprimidos primero para ubicar una ejecución; cuaderno homónimo sólo si una cuestión de implementación lo exige. No declarar revisada una superficie inaccesible.
 
-**Documentos vinculados:** [contratos y contrastes](CONTRASTS.md) · [referencias de implementación y scoring](LINEAGE.md).
+**Documentos vinculados:** [contratos y contrastes](CONTRASTS.md) · [referencias de implementación y scoring](LINEAGE.md) · [Sistema de Posicionamiento Posibilístico](SISTEMA_POSICIONAMIENTO_POSIBILISTICO_ES_EN.md).
 
 ## English
 
@@ -58,4 +58,4 @@ Intervention and localization define the generative comparison; mapping reads th
 - **New evidence only.** Historical artifacts and numbers are technical background, excluded from manuscript tables, figures, results, and empirical claims. They inform questions, not retrospective selection of outcomes or unannounced import of current parameters from older notebooks.
 - **Custody and discovery.** Search Drive, Downloads and 3D Objects on C:/D:, ChatGPT Library, and GitHub. Read existing local files without new downloads or extraction. Locate runs through archives; inspect a same-name notebook only when an implementation question requires it. Do not claim coverage of an inaccessible surface.
 
-**Companion documents:** [contracts and contrasts](CONTRASTS.md) · [implementation references and scoring](LINEAGE.md).
+**Companion documents:** [contracts and contrasts](CONTRASTS.md) · [implementation references and scoring](LINEAGE.md) · [Possibilistic Positioning System](SISTEMA_POSICIONAMIENTO_POSIBILISTICO_ES_EN.md).
