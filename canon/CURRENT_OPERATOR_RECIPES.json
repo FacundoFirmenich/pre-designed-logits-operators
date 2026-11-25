@@ -1,0 +1,9 @@
+{
+  "canon_id": "TALON_AUTHOR_RECIPES_CANON_V3_20261125",
+  "version": "3.0.0",
+  "json": "recipes/v3/39_CANON_RECETAS_AUTORES_Y_TALON_V3_20261125.json",
+  "card": "recipes/v3/39_CANON_RECETAS_AUTORES_Y_TALON_V3_20261125_ES_EN.md",
+  "guard": "recipes/v3/39_RECIPE_GUARD_V1.py",
+  "sha256": "b061ace9598217014e5bf8b8fd85b67be4d4434531381dd00b8349578bc7d58d",
+  "scope": "Future recipe selection only; TALON unchanged; historical results preserved; backend admission separate"
+}

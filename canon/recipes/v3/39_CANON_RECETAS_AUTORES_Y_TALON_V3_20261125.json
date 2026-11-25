@@ -1,0 +1,605 @@
+{
+  "schema_version": "3.0.0",
+  "canon_id": "TALON_AUTHOR_RECIPES_CANON_V3_20261125",
+  "date": "2026-11-25",
+  "state": "RECIPES_CANONICAL_NOT_A_NEW_RUN_NOT_ALL_BACKENDS_ADMITTED",
+  "authority_es": "Orden explícita del autor: ficha con receta de cada autor y nuestra receta; canonizar y subir a TALON_11_2026 en Drive y al repositorio pre-designed-logits-operators.",
+  "authority_en": "Explicit author instruction: record author recipes alongside our effective recipes; canonize and preserve in the named Drive folder and repository.",
+  "supersedes_prospectively": "TALON_EFFECTIVE_CANON_V2_SINGLE_BASELINE_20261124",
+  "operator_config": {
+    "strength": 0.7,
+    "temperature": 1.0,
+    "head_fraction": 0.12,
+    "mass_threshold": 0.92,
+    "left_weight": 0.65,
+    "right_weight": 1.2,
+    "side_policy": "right",
+    "selection_mode": "mass",
+    "preserve_top1": false,
+    "top1_preserve_momentum": 0.2,
+    "kl_threshold": 0.0,
+    "delta_form": "tanh",
+    "absolute_min_tokens": 8,
+    "std_method": "median_mad",
+    "robust_eps": 1e-06,
+    "debug": true
+  },
+  "branch": "talon_mass_right",
+  "external_temperature": 0.85,
+  "external_top_k": 0,
+  "external_top_p": 1.0,
+  "pipeline": [
+    "Effective",
+    "TemperatureLogitsWarper",
+    "AfterWarper"
+  ],
+  "pilot_action_sha256": "774121dd2b716029a2ded0d949c25c335a43dfd3dd0fcc13332e77ee7f3bb240",
+  "seeds": [
+    64,
+    12,
+    24,
+    48,
+    96
+  ],
+  "baseline_policy": {
+    "count": 1,
+    "temperature": 1.0,
+    "external_top_k": 0,
+    "external_top_p": 1.0
+  },
+  "source_registry": {
+    "mink_readme": {
+      "repository": "YecanLee/Mink",
+      "commit": "39fa4cb070212c04eb32897898e383b42da530ae",
+      "path": "README.md",
+      "git_blob_sha1": "bd6c61a23714010b3fc09e1218e986e9904bd277",
+      "url": "https://github.com/YecanLee/Mink/blob/39fa4cb070212c04eb32897898e383b42da530ae/README.md"
+    },
+    "mink_code": {
+      "repository": "YecanLee/Mink",
+      "commit": "39fa4cb070212c04eb32897898e383b42da530ae",
+      "path": "llm_mink.py",
+      "git_blob_sha1": "9cffeb62ba6072b12875e6ac11388fbce8db423e",
+      "url": "https://github.com/YecanLee/Mink/blob/39fa4cb070212c04eb32897898e383b42da530ae/llm_mink.py"
+    },
+    "mirostat_code": {
+      "repository": "basusourya/mirostat",
+      "commit": "ea2e61b511f1316e663228c0def2c4c143b3c417",
+      "path": "mirostat.py",
+      "git_blob_sha1": "03d24cb6a377728ed7ed3b81847e3e9eeff362c5",
+      "url": "https://github.com/basusourya/mirostat/blob/ea2e61b511f1316e663228c0def2c4c143b3c417/mirostat.py"
+    },
+    "mirostat_readme": {
+      "repository": "basusourya/mirostat",
+      "commit": "ea2e61b511f1316e663228c0def2c4c143b3c417",
+      "path": "README.md",
+      "git_blob_sha1": "b68d109a36180d4a38bea8fd12abb3eaafc9a31e",
+      "url": "https://github.com/basusourya/mirostat/blob/ea2e61b511f1316e663228c0def2c4c143b3c417/README.md"
+    },
+    "eta_code": {
+      "repository": "john-hewitt/truncation-sampling",
+      "commit": "2f33a7498a4a6e6e2bb3ae2d54cb5178ebde9272",
+      "path": "src/warpers.py",
+      "git_blob_sha1": "5df37fe1de9e512c97737da251458131c5d381d3",
+      "url": "https://github.com/john-hewitt/truncation-sampling/blob/2f33a7498a4a6e6e2bb3ae2d54cb5178ebde9272/src/warpers.py"
+    },
+    "eta_recipe": {
+      "repository": "john-hewitt/truncation-sampling",
+      "commit": "2f33a7498a4a6e6e2bb3ae2d54cb5178ebde9272",
+      "path": "human_eval/README.md",
+      "git_blob_sha1": "62ee48ca9d57479efac7357616870482071e4c7c",
+      "url": "https://github.com/john-hewitt/truncation-sampling/blob/2f33a7498a4a6e6e2bb3ae2d54cb5178ebde9272/human_eval/README.md"
+    },
+    "eta_variants": {
+      "repository": "john-hewitt/truncation-sampling",
+      "commit": "2f33a7498a4a6e6e2bb3ae2d54cb5178ebde9272",
+      "path": "src/simple_repetition.py",
+      "git_blob_sha1": "e234bd03cf5c6bc8f3317bdc41dad79fe79b4ecf",
+      "url": "https://github.com/john-hewitt/truncation-sampling/blob/2f33a7498a4a6e6e2bb3ae2d54cb5178ebde9272/src/simple_repetition.py"
+    },
+    "top_h_code": {
+      "repository": "ErfanBaghaei/Top-H-Decoding",
+      "commit": "8b94d62b238ed62793627f4a2556d90188560854",
+      "path": "logit_processor.py",
+      "git_blob_sha1": "ed34dc3c467d8a4e3bdbca384f3df6270c45883a",
+      "url": "https://github.com/ErfanBaghaei/Top-H-Decoding/blob/8b94d62b238ed62793627f4a2556d90188560854/logit_processor.py"
+    },
+    "top_h_eval": {
+      "repository": "ErfanBaghaei/Top-H-Decoding",
+      "commit": "8b94d62b238ed62793627f4a2556d90188560854",
+      "path": "lm_evaluate.sh",
+      "git_blob_sha1": "e190fd45e38f87157de5cfd8c75a594fc2ebe0ef",
+      "url": "https://github.com/ErfanBaghaei/Top-H-Decoding/blob/8b94d62b238ed62793627f4a2556d90188560854/lm_evaluate.sh"
+    },
+    "top_nsigma_code": {
+      "repository": "Tomorrowdawn/top_nsigma",
+      "commit": "82ac59a5c36da7d9d0f83b3a6e5ab57eaa9442d0",
+      "path": "src/hf/hf_nsigma.py",
+      "git_blob_sha1": "5e85b142d04ee9b83e4baf6762f96c18870b0378",
+      "url": "https://github.com/Tomorrowdawn/top_nsigma/blob/82ac59a5c36da7d9d0f83b3a6e5ab57eaa9442d0/src/hf/hf_nsigma.py"
+    },
+    "p_less_code": {
+      "repository": "ryttry/p-less",
+      "commit": "a681f23682a329099306eea9cf7b1dd0447e2eec",
+      "path": "p_less_samplers.py",
+      "git_blob_sha1": "da7a9b041ae583472e6876e65237e760fb031d3c",
+      "url": "https://github.com/ryttry/p-less/blob/a681f23682a329099306eea9cf7b1dd0447e2eec/p_less_samplers.py"
+    },
+    "min_p_readme": {
+      "repository": "menhguin/minp_paper",
+      "commit": "c21ceec41038ffd0ead508f56c60b7474175a62a",
+      "path": "README.md",
+      "git_blob_sha1": "e11291bfc1abe679894714937b8c55b36124ea34",
+      "url": "https://github.com/menhguin/minp_paper/blob/c21ceec41038ffd0ead508f56c60b7474175a62a/README.md"
+    },
+    "dola_gsm8k": {
+      "repository": "voidism/DoLa",
+      "commit": "805230e57e63ca561cb759994681b122ff6f81f0",
+      "path": "gsm8k_eval.py",
+      "git_blob_sha1": "811d0748058a40cc9fd7d0f04f406398f6d79347",
+      "url": "https://github.com/voidism/DoLa/blob/805230e57e63ca561cb759994681b122ff6f81f0/gsm8k_eval.py"
+    },
+    "ees_release_status": {
+      "repository": "shuanncai/Entropy-Equilibrium-Sampling",
+      "commit": "03eccde61c92dafce9bc67572f1ff276206f9a39",
+      "path": "README.md",
+      "git_blob_sha1": "2dc851803abe63643a2248a8c91fe55e48725a6e",
+      "url": "https://github.com/shuanncai/Entropy-Equilibrium-Sampling/blob/03eccde61c92dafce9bc67572f1ff276206f9a39/README.md"
+    }
+  },
+  "profiles": {
+    "talon_mass_right": {
+      "author": "Facundo Firmenich",
+      "role": "proposed_method",
+      "scope": "principal",
+      "author_recipe": {
+        "operator_config": {
+          "strength": 0.7,
+          "temperature": 1.0,
+          "head_fraction": 0.12,
+          "mass_threshold": 0.92,
+          "left_weight": 0.65,
+          "right_weight": 1.2,
+          "side_policy": "right",
+          "selection_mode": "mass",
+          "preserve_top1": false,
+          "top1_preserve_momentum": 0.2,
+          "kl_threshold": 0.0,
+          "delta_form": "tanh",
+          "absolute_min_tokens": 8,
+          "std_method": "median_mad",
+          "robust_eps": 1e-06,
+          "debug": true
+        },
+        "external_temperature": 0.85,
+        "external_top_k": 0,
+        "external_top_p": 1.0
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 0.85,
+        "do_sample": true,
+        "operator_config": {
+          "strength": 0.7,
+          "temperature": 1.0,
+          "head_fraction": 0.12,
+          "mass_threshold": 0.92,
+          "left_weight": 0.65,
+          "right_weight": 1.2,
+          "side_policy": "right",
+          "selection_mode": "mass",
+          "preserve_top1": false,
+          "top1_preserve_momentum": 0.2,
+          "kl_threshold": 0.0,
+          "delta_form": "tanh",
+          "absolute_min_tokens": 8,
+          "std_method": "median_mad",
+          "robust_eps": 1e-06,
+          "debug": true
+        },
+        "outer_top1_projection": true,
+        "pipeline": [
+          "Effective",
+          "TemperatureLogitsWarper",
+          "AfterWarper"
+        ]
+      },
+      "source_refs": [],
+      "action_sha256": "774121dd2b716029a2ded0d949c25c335a43dfd3dd0fcc13332e77ee7f3bb240",
+      "runtime_package_sha256": "f41318f04188e88d7a28bcdeff19ca4d388370cb68165fd81285f0f600d9f78c",
+      "admission": "UNCHANGED_SEALED_OPERATOR_PER_BACKEND_ADMISSION_STILL_REQUIRED",
+      "es": "Receta propia del autor conservada íntegra: T externa0,85, masa0,92, strength0,7, mediana/MAD, tanh, rama right y protección externa. Sin K/P externos ni QAS.",
+      "en": "Author's sealed TALON recipe preserved: external T0.85, mass0.92, strength0.7, median/MAD, tanh, right branch, outer guard; no external K/P or QAS.",
+      "profile_id": "talon_mass_right"
+    },
+    "baseline_t100": {
+      "author": "identity control",
+      "role": "only_baseline",
+      "scope": "principal",
+      "author_recipe": {
+        "definition": "identity logits; temperature1"
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true
+      },
+      "source_refs": [],
+      "admission": "SINGLE_BASELINE_NO_T085_DUPLICATE",
+      "es": "Único baseline T1. Es control de la comparación, no una temperatura universalmente óptima ni un control que aísle por sí solo el efecto de TALON de T0,85.",
+      "en": "One T1 baseline; a comparison control, not a universal optimum or a temperature-matched causal isolation of TALON.",
+      "profile_id": "baseline_t100"
+    },
+    "min_k": {
+      "author": "Yuanhao Ding et al.",
+      "role": "comparator",
+      "scope": "principal",
+      "author_recipe": {
+        "selected_authority": "official README Run Paper Inference Experiments",
+        "tau": 3.0,
+        "temperature": 1.0,
+        "constructor_default_not_selected": 2.0,
+        "bare_cli_temperature_not_selected": 4.0
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true,
+        "tau": 3.0,
+        "implementation": "MinkLogitsProcessor",
+        "range_epsilon": 1e-08,
+        "pipeline": [
+          "MinK_on_raw_logits",
+          "temperature_once",
+          "sample"
+        ]
+      },
+      "source_refs": [
+        "mink_readme",
+        "mink_code"
+      ],
+      "admission": "AUTHOR_RECIPE_CONFIRMED_NO_NUMERIC_CHANGE",
+      "es": "τ3/T1 procede expresamente del README de los autores. La diferencia con constructorτ2 y CLI sin argumentos T4 no lo convierte en una invención nuestra. Se fija el comando documentado, no defaults accidentales.",
+      "en": "Tau3/T1 is explicitly prescribed by the authors' README. Constructor tau2 and bare CLI T4 are distinct artifacts; the documented reproduction command is the authority.",
+      "profile_id": "min_k"
+    },
+    "top_h": {
+      "author": "Erfan Baghaei Potraghloo, Seyedarmin Azizi, Souvik Kundu, Massoud Pedram",
+      "role": "comparator",
+      "scope": "principal",
+      "author_recipe": {
+        "selected_authority": "official constructor",
+        "alpha": 0.4,
+        "top_n": 100,
+        "temperature": 1.0,
+        "class": "TopH_LogitsProcessor",
+        "published_other_temperature_example": 2.0
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true,
+        "alpha": 0.4,
+        "top_n": 100,
+        "implementation_identity": "historical HF5.16.1 TopHLogitsWarper; not silently relabeled as raw author code",
+        "author_target": "TopH_LogitsProcessor"
+      },
+      "source_refs": [
+        "top_h_code",
+        "top_h_eval"
+      ],
+      "admission": "PARAMETERS_CONFIRMED_IMPLEMENTATION_EQUIVALENCE_REQUIRED_BEFORE_NEW_FREEZE",
+      "es": "Valores del constructor autoral. La implementación histórica HF5.16.1 sigue identificada como tal; no se presupone equivalencia bit a bit con el código autoral. El bucle y dispositivo del código original requieren prueba de borde antes de portarlo. No se sustituye en silencio.",
+      "en": "Author constructor parameters retained. Historical HF5.16.1 remains explicitly identified; raw author-code equivalence is not assumed. Boundary/device admission precedes any implementation replacement.",
+      "profile_id": "top_h"
+    },
+    "min_p": {
+      "author": "Minh Nhat Nguyen et al.",
+      "role": "comparator",
+      "scope": "principal",
+      "author_recipe": {
+        "recommended_base_range": [
+          0.05,
+          0.1
+        ],
+        "selected_published_value": 0.1,
+        "temperature": "paper evaluates a range, including1; no unique mandatory T",
+        "pipeline": "temperature before relative probability cutoff; standalone truncator"
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true,
+        "min_p": 0.1,
+        "min_tokens_to_keep": 1,
+        "pipeline": [
+          "temperature_once",
+          "min_p_relative_cutoff",
+          "sample"
+        ]
+      },
+      "source_refs": [
+        "min_p_readme"
+      ],
+      "paper": "https://arxiv.org/html/2407.01082v8#S3.SS4",
+      "admission": "AUTHOR_RECOMMENDED_VALUE_AND_ORDER_CONFIRMED_IMPLEMENTATION_PIN_REQUIRED",
+      "es": "p0,10 está dentro de la recomendación0,05–0,10 de sus autores. T1 conserva nuestro panel y pertenece a sus evaluaciones; no se impone T0,85 de TALON. Sin Top-P adicional tomado de un ejemplo ilustrativo.",
+      "en": "p0.10 lies within the authors' recommended0.05–0.10 range. T1 is an evaluated setting, not TALON's T0.85. No unrelated top-p filter is inherited from an illustrative snippet.",
+      "profile_id": "min_p"
+    },
+    "p_less": {
+      "author": "Runyan Tan, Shuang Wu, Phillip Howard",
+      "role": "comparator",
+      "scope": "principal",
+      "author_recipe": {
+        "function": "p_less_decode",
+        "threshold": "sum(p_i**2)",
+        "retain": "p_i >= threshold",
+        "truncation_hyperparameters": [],
+        "temperature": "probability input; chosen outside function"
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true,
+        "function": "p_less_decode",
+        "variant": "original, not p_less_norm_decode",
+        "pipeline": [
+          "temperature_once",
+          "softmax",
+          "author_p_less_decode"
+        ]
+      },
+      "source_refs": [
+        "p_less_code"
+      ],
+      "admission": "AUTHOR_FUNCTION_CONFIRMED_NO_VARIANT_SUBSTITUTION",
+      "es": "Variante original p_less_decode; no norm ni affine. Umbral sin hiperparámetros. La temperatura se aplica una sola vez antes de formar probabilidades.",
+      "en": "Original p_less_decode, not norm or affine. Hyperparameter-free cutoff; temperature applied once before probabilities.",
+      "profile_id": "p_less"
+    },
+    "top_nsigma": {
+      "author": "Chenxia Tang, Jianchun Liu, Hongli Xu, Liusheng Huang",
+      "role": "comparator",
+      "scope": "principal",
+      "author_recipe": {
+        "nsigma": 1.0,
+        "selected_authority": "ACL2025 paper default recommendation, sections4.2 and appendixD",
+        "std_correction": 1,
+        "retain": "z_i >= max(z)-nsigma*std(z)"
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true,
+        "nsigma": 1.0,
+        "std_correction": 1,
+        "pipeline": [
+          "TopNSigma_on_untruncated_logits",
+          "temperature_once",
+          "sample"
+        ]
+      },
+      "source_refs": [
+        "top_nsigma_code"
+      ],
+      "paper": "https://aclanthology.org/2025.acl-long.528.pdf",
+      "admission": "PAPER_DEFAULT_CONFIRMED",
+      "es": "n1 es el default recomendado por sus autores. σ conserva torch.std con corrección1. Se aplica antes de truncadores que contaminen la desviación; no se mezcla con K/P externos.",
+      "en": "n1 is the paper-recommended default. Preserve torch.std correction1 and apply before other truncators; no external K/P stack.",
+      "profile_id": "top_nsigma"
+    },
+    "eta_sampling": {
+      "author": "John Hewitt, Christopher D. Manning, Percy Liang",
+      "role": "new_comparator",
+      "scope": "principal_after_backend_admission",
+      "author_recipe": {
+        "selected_authority": "authors' human-evaluation generation records and GPT2-large repetition recipe",
+        "epsilon_input": 0.0006,
+        "temperature": 1.0,
+        "top_k": 0,
+        "top_p": 1.0,
+        "other_published_model_inputs": {
+          "gpt2-xl": 0.0003,
+          "gpt2-large": 0.0006,
+          "gpt2-medium": 0.002,
+          "gpt2": 0.002
+        }
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true,
+        "eta_cutoff": 0.0006,
+        "adaptive_threshold": "min(epsilon,sqrt(epsilon)*exp(-H(p)))",
+        "keep_argmax": true,
+        "pipeline": [
+          "temperature_once",
+          "EtaWarper",
+          "sample"
+        ]
+      },
+      "source_refs": [
+        "eta_recipe",
+        "eta_variants",
+        "eta_code"
+      ],
+      "admission": "PUBLISHED_RECIPE_FROZEN_TRANSPORT_NOT_YET_BENCHMARKED",
+      "es": "Se transporta sin ajuste la receta autoral de evaluación humana ε0,0006/T1/K0/P1. No es un default universal para todos los modelos; el 0,0009 usado en otros papers comparativos no se atribuye a Hewitt et al. No cambiar según nuestros resultados.",
+      "en": "Transport the original authors' human-evaluation epsilon0.0006/T1/K0/P1 recipe without retuning. Not a universal all-model optimum; do not misattribute another paper's0.0009 comparator setting to these authors.",
+      "profile_id": "eta_sampling"
+    },
+    "mirostat_original": {
+      "author": "Sourya Basu, Govardana Sachitanandam Ramachandran, Nitish Shirish Keskar, Lav R. Varshney",
+      "role": "new_comparator",
+      "scope": "principal_after_backend_admission",
+      "author_recipe": {
+        "variant": "original estimate-s adaptive-top-k algorithm, not Mirostat2",
+        "tau_bits": 3.0,
+        "learning_rate": 1.0,
+        "mu_initial": 6.0,
+        "estimate_s_rank_pairs_in_code": 100,
+        "vocabulary_size_in_gpt2_demo": 50000,
+        "temperature": "no extra scaling in original script",
+        "k_rounding": "round(k)+1 in official script"
+      },
+      "comparison_recipe": {
+        "external_top_k": 0,
+        "external_top_p": 1.0,
+        "additional_repetition_penalty": 1.0,
+        "qas": false,
+        "temperature": 1.0,
+        "do_sample": true,
+        "variant": "original",
+        "tau_bits": 3.0,
+        "learning_rate": 1.0,
+        "mu_initial": 6.0,
+        "estimate_s_rank_pairs": 100,
+        "vocabulary_size": "actual model output vocabulary N, from paper Algorithm1; replaces GPT2-demo constant50000, not outcome-tuned",
+        "surprise": "-log2(p_original[selected_token]) before adaptive truncation",
+        "state_update": "mu <- mu -1.0*(surprise-3.0)",
+        "state_reset": "mu=6 once per fresh prompt/seed, not per token",
+        "k_rounding": "round(k)+1",
+        "external_fixed_top_k_disabled": true,
+        "pipeline": [
+          "softmax_T1",
+          "estimate_s",
+          "adaptive_top_k_from_mu",
+          "sample",
+          "update_mu_from_actual_sample"
+        ]
+      },
+      "source_refs": [
+        "mirostat_readme",
+        "mirostat_code"
+      ],
+      "paper": "https://arxiv.org/html/2007.14966v2#S4",
+      "admission": "AUTHOR_RECIPE_FROZEN_STATEFUL_DECODING_INTEGRATION_AND_BACKEND_TEST_REQUIRED",
+      "es": "Original autoral: τ3bits, learning_rate1, μ0=6 y100 pares para estimar s en el script. Se exige feedback del token realmente muestreado. No sustituir por Mirostat2, por defaults de terceros τ5/η0,1 ni por el comparador sin feedback del repo Min-K. N se obtiene del modelo como en el algoritmo general del paper; se declara la adaptación del demo GPT2.",
+      "en": "Original author recipe: tau3bits, learning_rate1, mu0=6 and100 rank pairs in the script. Update using the actual sampled token. No substitution by Mirostat2, downstream tau5/eta0.1 defaults or Min-K's stateless comparator. N is the model vocabulary as in the paper's general algorithm; the GPT2-demo adaptation is explicit.",
+      "profile_id": "mirostat_original"
+    },
+    "dola": {
+      "author": "Yung-Sung Chuang et al.",
+      "role": "conditional_layered_comparator",
+      "scope": "secondary_supported_architectures_only",
+      "author_recipe": {
+        "task_profile": "GSM8K/StrategyQA greedy",
+        "do_sample": false,
+        "relative_top": 0.1,
+        "repetition_penalty": 1.2,
+        "layers": "model-depth-specific premature pool plus mature final layer",
+        "temperature_argument_greedy_inactive": 0.9,
+        "top_p_argument_greedy_inactive": 0.95,
+        "top_k": 0
+      },
+      "comparison_recipe": {
+        "do_sample": false,
+        "relative_top": 0.1,
+        "repetition_penalty": 1.2,
+        "dola_layers": "low; exact supported-model mapping must be recorded",
+        "temperature": "inactive in greedy",
+        "qas": false,
+        "time_budget_factor": 1.1,
+        "time_adjudication": "paired final and on-time; not generation kill",
+        "reference_membership": "freeze per actual campaign; never retroactively add new comparators"
+      },
+      "source_refs": [
+        "dola_gsm8k"
+      ],
+      "admission": "LAYER_NORM_HEAD_CACHE_COMPATIBILITY_REQUIRED_PER_MODEL",
+      "es": "Un perfil greedy con plausibilidad0,1 y repetición1,2. La lista de capas depende de arquitectura/profundidad: no importar sin validar la lista de Llama a Qwen/Granite. T y P de muestreo son inactivos en greedy. El 110% es criterio de nuestra evaluación, no parámetro de los autores.",
+      "en": "One greedy profile with relative_top0.1 and repetition1.2. Record model-specific layer mapping; no unvalidated Llama-layer transfer. Sampling T/P inactive in greedy.110% is our evaluation rule, not an author parameter.",
+      "profile_id": "dola"
+    },
+    "ees": {
+      "author": "Xiaodong Cai et al.",
+      "role": "candidate_not_admitted",
+      "scope": "not_in_active_pool",
+      "author_recipe": {
+        "theta": 1.0,
+        "rule": "camera-ready first crossing: retain prefix before first normalized-entropy < cumulative-mass violation",
+        "truncation_hyperparameters": [],
+        "release_status": "official README says public code is earlier and camera-ready experimental code is not synchronized"
+      },
+      "comparison_recipe": null,
+      "source_refs": [
+        "ees_release_status"
+      ],
+      "admission": "BLOCKED_CAMERA_READY_CODE_PARITY_NOT_CLAIMED",
+      "es": "Se documenta, pero no se inventa una receta ejecutable: el README autoral avisa de que el código público no está sincronizado con la versión final. No incluirlo ni asignarle resultados hasta resolver esa correspondencia.",
+      "en": "Documented, not silently admitted: the authors explicitly state that public code predates camera-ready experiments. No executable parity or results are claimed.",
+      "profile_id": "ees"
+    }
+  },
+  "policy": {
+    "author_recipes": "Prefer the authors' explicit reproduction command, then paper task recipe, then constructor defaults. Preserve documented conflicts; never invent a universal default.",
+    "no_retuning": "No choice based on this study's test outcomes. Fixed author-native recipe, with declared cross-model transport rather than outcome calibration.",
+    "no_silent_mutation": "Version changes require explicit author direction, new canon id, changed-field record and new hashes. Preserve predecessor bytes and old outcome jurisdictions.",
+    "no_hidden_filters": "Disable inherited external top-k/top-p for TALON and identity baseline; do not stack them onto rivals unless their chosen documented method needs them. Native Top-H top_n and adaptive Mirostat k are not external K50.",
+    "no_double_temperature": "Exactly one active temperature application per sampled profile; never import TALON0.85 into foreign comparator recipes.",
+    "termination": {
+      "experimental_max_new_tokens": null,
+      "per_answer_experimental_max_time": null,
+      "natural": "EOS",
+      "resource_limits": "Model context, provider limits and declared campaign budget remain finite. Record censored outputs without inventing final answers."
+    },
+    "comparison": "Per-model/item/seed/profile/precision/backend jurisdiction, paired wins/ties/losses and bidirectional rescues. Greedy repeats are not independent content samples.",
+    "hardware_and_precision": "Fixed in each visible run card and matched panel; no model, weight format, compute dtype, prompt set or hardware changes authorized by this recipe document.",
+    "qas_z_router": "No automatic inclusion; TALON-only paper contribution remains. Separate follow-up design may add ablations with explicit authority.",
+    "execution_gate": "Recipe values frozen does not assert implementation parity. Validate backend, record actual effective values and confirm guard before any new model run.",
+    "runtime_integration": "Companion guard is implemented and tested as a standalone preflight; no existing provider campaign is modified or launched here."
+  },
+  "corrections": [
+    {
+      "issue": "Min-K attribution",
+      "before": "registered experimental profile, not universal author default",
+      "after": "explicit author README reproduction recipe tau3/T1",
+      "numeric_change": false
+    },
+    {
+      "issue": "eta/Mirostat coverage",
+      "before": "not in current frozen control list",
+      "after": "author-derived recipes canonized; runtime admission remains explicit",
+      "numeric_change": "new profiles, not rewriting old outcomes"
+    },
+    {
+      "issue": "Mirostat provenance",
+      "before": "risk of stateless comparator or third-party defaults under same name",
+      "after": "original stateful author algorithm identified and pinned",
+      "numeric_change": "no past Mirostat result relabeled"
+    },
+    {
+      "issue": "EES release",
+      "before": "candidate without camera-ready code status",
+      "after": "author-declared release mismatch recorded; not admitted",
+      "numeric_change": false
+    }
+  ],
+  "protected_history": "Predecessor JSON/MD and all notebooks, outputs, adverse results, original seeds, old recipe versions and raw chats remain unchanged.",
+  "public_payload": "Scientific recipe card only; no local paths, account emails, credentials, private Drive object ids or session metadata."
+}

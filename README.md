@@ -1,3 +1,7 @@
+> **Canon vigente de recetas / Current recipe canon — V3, 2026-11-25:** [Ficha completa ES/EN / Full bilingual card](canon/recipes/v3/39_CANON_RECETAS_AUTORES_Y_TALON_V3_20261125_ES_EN.md) · [JSON canónico / Canonical JSON](canon/recipes/v3/39_CANON_RECETAS_AUTORES_Y_TALON_V3_20261125.json) · [Puntero vigente / Current pointer](canon/CURRENT_OPERATOR_RECIPES.json).
+>
+> Recetas autorales verificadas, receta TALON intacta y cambios futuros versionados. El diseño original que sigue se conserva como historia; no sustituye el canon vigente de recetas. / Verified author recipes, unchanged TALON, explicitly versioned future changes. The original design below is retained as history, not as a replacement for the current recipe canon.
+
 # Pre-designed Logits Operators
 
 [Español](#español) · [English](#english)
